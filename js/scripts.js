@@ -5,8 +5,16 @@ $(document).ready(function(){
     var userInput = $("#numInput").val();
     console.log(userInput);
 
-
+    loopThroughInput(userInput);
   })
 
-
 });
+
+
+function loopThroughInput(userInput) {
+  var outputArray = [];
+  for (var i = 0; i < userInput; i++){
+    outputArray.push(i);
+  }
+  console.log(outputArray);
+}
