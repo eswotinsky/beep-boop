@@ -5,11 +5,19 @@ $(document).ready(function(){
     //read & store user input
     var userInput = ($("#numInput").val());
 
+    checkInput(userInput);
+
     $("#results").text(loopThroughInput(userInput));
   })
 
 });
 
+//if input is not a number, alert user to try again
+function checkInput(userInput){
+  if (isNaN(userInput)) {
+    alert("Please enter a number.");
+  }
+}
 
 function loopThroughInput(userInput) {
   var outputArray = [];
