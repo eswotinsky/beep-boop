@@ -2,32 +2,35 @@ $(document).ready(function(){
   $("form#inputForm").submit(function(event){
     event.preventDefault();
 
-    //read & store user input
-    var userInput = ($("#numInput").val());
+    //read & store user's name input
+    var nameInput = ($("#nameInput").val());
 
-    checkInput(userInput);
+    //read & store user's num input
+    var numInput = ($("#numInput").val());
 
-    $("#results").text(loopThroughInput(userInput));
+    //check whether numInput is a valid number
+    checkInput(numInput);
+
+    $("#results").text(loopThroughInput(nameInput, numInput));
   })
 
 });
 
-//if input is not a number, alert user to try again
-function checkInput(userInput){
-  if (isNaN(userInput)) {
+function checkInput(numInput){
+  if (isNaN(numInput)) {
     alert("Please enter a number.");
   }
 }
 
-function loopThroughInput(userInput) {
+function loopThroughInput(nameInput, numInput) {
   var outputArray = [];
 
-  //loop through all nums between 0 and userInput
-  for (var i = 0; i <= userInput; i++){
+  //loop through all nums between 0 and numInput
+  for (var i = 0; i <= numInput; i++){
 
     //replace nums divisible by 3 with "I'm sorry..." string
     if (i % 3 == 0 && i > 0) {
-      outputArray.push("I'm sorry, Dave. I'm afraid I can't do that.");
+      outputArray.push("I'm sorry, " + nameInput + ". I'm afraid I can't do that.");
     }
 
     //else, replace nums containing 1 with "Boop!" in outputArray
@@ -45,6 +48,5 @@ function loopThroughInput(userInput) {
       outputArray.push(parseInt(i));
     }
   }
-  console.log(outputArray);
   return outputArray;
 }
