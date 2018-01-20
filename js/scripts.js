@@ -11,14 +11,17 @@ $(document).ready(function(){
     //check whether numInput is a valid number
     checkInput(numInput);
 
+    //call loop function and print results to #results div
     $("#results").text(loopThroughInput(nameInput, numInput));
   })
-
 });
 
 function checkInput(numInput){
   if (isNaN(numInput)) {
-    alert("Please enter a number.");
+    alert("Oops! Please enter a number.");
+  }
+  else if (numInput < 0) {
+    alert("Oops! Please enter a positive number.");
   }
 }
 
@@ -43,10 +46,12 @@ function loopThroughInput(nameInput, numInput) {
       outputArray.push("Beep!");
     }
 
-    //else, push the num in question to outputArray (as an int)
+    //else, push  num in question to outputArray (as an int)
     else {
       outputArray.push(parseInt(i));
     }
   }
-  return outputArray;
+
+  //return output as string with spaces separating each element
+  return outputArray.join(", ");
 }
