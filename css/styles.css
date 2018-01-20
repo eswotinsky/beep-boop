@@ -1,0 +1,12 @@
+.container {
+  background-color: cyan;
+}
+
+.jumbotron {
+  text-align: center;
+  background-color: #80ff80;
+}
+
+#results {
+  font-weight: bold;
+}
