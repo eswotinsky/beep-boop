@@ -43,15 +43,3 @@ _This project was created in HTML, CSS, and JavaScript (drawing on the Bootstrap
 *This project is released under the GNU GPL license.*
 
 Copyright (c) 2018 **_Eric Swotinsky_**
-
-
-program takes a number and returns range of numbers from 0 to input
-
-program replaces 3%0 nums with string
-
-program replaces nums containing "0" with Beep!
-
-program replaces nums containing "1" with Boop!
-
-
-program can handle negative numbers
